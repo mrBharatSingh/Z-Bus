@@ -1,0 +1,27 @@
+.goliveContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.goliveContainer div button{
+    margin-bottom: 20px;
+    width: 20em;
+    height: 20em;
+}
+.goliveContainer div button mat-icon{
+font-size: 13em;
+width: 100%;
+height: 100%;
+}
+
+.example-button-container1 button{
+    background-color: green;
+}
+
+.example-button-container2 button{
+    background-color: tomato;
+}

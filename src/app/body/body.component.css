@@ -1,0 +1,15 @@
+.grid-tile{
+    background-color: tomato;
+
+    gap: 2px;
+}
+
+.grid-tile img{
+    width: 50%;
+}
+.grid-tile h2{
+    color: white;
+}
+ ::ng-deep .mat-grid-tile-content{
+    flex-direction: column;
+}
