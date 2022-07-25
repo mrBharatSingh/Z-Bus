@@ -1,0 +1,15 @@
+<select name="busRoute" id="">
+        <option value="" *ngFor="let bus of buses" [value]="bus">Bus NO: {{bus}}</option>
+        
+</select>
+
+<!-- <mat-form-field appearance="fill">
+        <mat-label>Select Your Route</mat-label>
+        <mat-select disableRipple>
+          <mat-option *ngFor="let bus of buses" [value]="bus" >
+            {{bus}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      
+<div id="map"></div>
