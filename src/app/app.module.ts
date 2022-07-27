@@ -10,6 +10,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import { LocationService } from './service/location.service';
 
 
 
@@ -30,10 +32,11 @@ import {MatSelectModule} from '@angular/material/select';
     RouterModule,
     MatButtonModule,
     MatSelectModule,
+    HttpClientModule
    
     
   ],
-  providers: [],
+  providers: [LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

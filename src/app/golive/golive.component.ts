@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocationService } from '../service/location.service';
 
 @Component({
   selector: 'app-golive',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoliveComponent implements OnInit {
   id: any;
-  constructor() {}
+  constructor(private locationService:LocationService) {}
 
   ngOnInit(): void {}
   shareLocation() {
@@ -34,13 +35,16 @@ export class GoliveComponent implements OnInit {
           'lon: ',
           position.coords.longitude
         );
+        this.locationService.postlocation({"cord":[position.coords.latitude, position.coords.longitude]}).subscribe((result)=>{
+          console.warn(result)
+        })
       },
       (err) => {
         console.log(err);
       },
       {
         enableHighAccuracy: false,
-        timeout: 5000,
+        timeout: 60000,
         maximumAge: 0,
       }
     );
