@@ -5,10 +5,10 @@ path=require("path")
 
 const app=express()
 
-app.use(express.static('./dist/zbus'))
+app.use(express.static(__dirname+'./dist/zbus'))
 
 app.get("/*",(req,res)=>{
-    res.sendFile('index.html',{root:'dist/zbus/'})
+    res.sendFile(__dirname+'dist/zbus/index.html')
 })
 
 app.listen(process.env.PORT|| 4200)
