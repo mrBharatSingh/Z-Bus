@@ -1,0 +1,19 @@
+.navContainer{
+    background-image: linear-gradient(to right, #f86437, #f4bf2e);
+    margin-bottom: 20px;
+}
+.navContainer span{
+    margin: 5px;
+}
+.navContainer a{
+    margin-left: 10px;
+    text-decoration: none;
+    align-items:inherit;
+    /* font-weight: bold; */
+    font-size: 1.5em;
+    
+}
+
+.navContainer a span{
+    color: white;
+}

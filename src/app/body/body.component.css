@@ -1,15 +1,22 @@
 .grid-tile{
-    background-color: tomato;
-
-    gap: 2px;
+    background-image: linear-gradient(to right, #12aeee, #0080d4);
+    width: 90%;
+    border: 2px solid rebeccapurple;
+    border-radius: 20px;
 }
 
 .grid-tile img{
     width: 50%;
+    filter: brightness(0) invert(1);
+    
 }
 .grid-tile h2{
     color: white;
 }
  ::ng-deep .mat-grid-tile-content{
     flex-direction: column;
+}
+
+::ng-deep .grid-tile{
+    width: calc((40% - 0.5px) * 1 + 0px);
 }
