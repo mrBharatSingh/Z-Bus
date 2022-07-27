@@ -9,8 +9,8 @@ const app=express()
 app.use(express.static(__dirname+'./dist/zbus'))
 
 app.get("/*",(req,res)=>{
-    // res.sendFile(__dirname+'dist/zbus/index.html')
-    res.send({"res":"peeka bhoo"})
+    res.sendFile(__dirname+'dist/zbus/index.html')
+    // res.send({"res":"peeka bhoo"})
 })
 
 app.listen(process.env.PORT|| 4200)
