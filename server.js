@@ -1,6 +1,6 @@
 const express=require("express")
-const p
-ath=require("path")
+
+path=require("path")
 
 
 const app=express()
