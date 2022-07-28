@@ -49,9 +49,9 @@ export class TrackBusComponent implements OnInit {
           popupAnchor: locat, // point from which the popup should open relative to the iconAnchor
         });
 
-        // if (marker) {
-        //   map.removeLayer(marker);
-        // }
+        if (marker) {
+          map.removeLayer(marker);
+        }
         marker = L.marker(locat);
         map.addLayer(marker);
 
@@ -61,7 +61,7 @@ export class TrackBusComponent implements OnInit {
         // console.log(map,i)
         // i++
       });
-    }, 2000);
+    }, 5000);
   }
 
   displayMap(locat: number[], map: any) {
