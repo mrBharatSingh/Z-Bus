@@ -1,2 +1,21 @@
 #map { height: 90%;
 width: 100%; }
+
+::ng-deep mat-form-field {
+    width: 95%;
+    margin-left: 2.5%;
+    height: fit-content;
+  
+}
+
+::ng-deep mat-form-field mat-label{
+    font-size: 1.8em;
+}
+::ng-deep mat-form-field mat-select{
+    font-size: 1.5em;
+}
+
+::ng-deep .mat-select-panel{
+   min-height: 500px;
+   /* border: 2px solid red; */
+}

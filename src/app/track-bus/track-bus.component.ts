@@ -10,12 +10,14 @@ declare const L: any;
 })
 export class TrackBusComponent implements OnInit ,OnDestroy{
   buses = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  // locat=[];
+  
    interval!: Subscription;
   constructor(private locationService: LocationService) { }
 
   ngOnInit(): void {
     let map = L.map('map');
+    this.displayMap([17.426013, 78.340666], map)
+    // map.setView([17.426013, 78.340666],16)
     
     //     var locatm=[ [17.426996, 78.341224],
     //     [17.426013, 78.340666],
@@ -45,10 +47,10 @@ export class TrackBusComponent implements OnInit ,OnDestroy{
           iconUrl: '../../assets/R.png',
           // shadowUrl: '../../assets/R.png',
 
-          iconSize: [95, 35], // size of the icon
+          iconSize: [50, 25], // size of the icon
           shadowSize: [95, 35], // size of the shadow
-          iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
-          shadowAnchor: [4, 62], // the same for the shadow
+          iconAnchor: [10, 20], // point of the icon which will correspond to marker's location
+          shadowAnchor: [10, 62], // the same for the shadow
           popupAnchor: locat, // point from which the popup should open relative to the iconAnchor
         });
 
@@ -58,10 +60,6 @@ export class TrackBusComponent implements OnInit ,OnDestroy{
         marker = L.marker(locat);
         map.addLayer(marker);
 
-        // marker = L.marker([17.416636, 78.320582]).addTo(map);
-        // marker._latlng.lat.locat[0]
-        // marker._latlng.lng.locat[1]
-        // console.log(map,i)
         // i++
       });
     }, 5000);
@@ -70,8 +68,11 @@ export class TrackBusComponent implements OnInit ,OnDestroy{
   
   this.interval.unsubscribe()
   }
+
+
+
   displayMap(locat: number[], map: any) {
-    map.setView(locat, 15);
+    map.setView(locat,16);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap',
@@ -93,7 +94,7 @@ export class TrackBusComponent implements OnInit ,OnDestroy{
       [17.438747, 78.315692],
     ];
 
-    var polyline = L.polyline(latlngs, { color: 'red' }).addTo(map);
+    var polyline = L.polyline(latlngs, { color: 'red'}).addTo(map);
     //   console.log(locat, '===========================');
   }
 }

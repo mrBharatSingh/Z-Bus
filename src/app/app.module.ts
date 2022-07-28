@@ -12,7 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationService } from './service/location.service';
-
+import { BrowserAnimationsModule } from'@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -32,7 +32,9 @@ import { LocationService } from './service/location.service';
     RouterModule,
     MatButtonModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    
    
     
   ],
