@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { LocationService } from '../service/location.service';
 declare const L: any;
 
@@ -7,13 +8,15 @@ declare const L: any;
   templateUrl: './track-bus.component.html',
   styleUrls: ['./track-bus.component.css'],
 })
-export class TrackBusComponent implements OnInit {
+export class TrackBusComponent implements OnInit ,OnDestroy{
   buses = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   // locat=[];
+   interval!: Subscription;
   constructor(private locationService: LocationService) { }
 
   ngOnInit(): void {
     let map = L.map('map');
+    
     //     var locatm=[ [17.426996, 78.341224],
     //     [17.426013, 78.340666],
     //     [17.425696, 78.340150],
@@ -32,7 +35,7 @@ export class TrackBusComponent implements OnInit {
     var marker: any = undefined;
     setInterval(() => {
       // var locat=locatm[i%locatm.length]
-      this.locationService.getlocation().subscribe((data) => {
+       this.interval= this.locationService.getlocation().subscribe((data) => {
         console.log(data.location);
         var locat = data.location;
 
@@ -63,7 +66,10 @@ export class TrackBusComponent implements OnInit {
       });
     }, 5000);
   }
-
+  ngOnDestroy(){
+  
+  this.interval.unsubscribe()
+  }
   displayMap(locat: number[], map: any) {
     map.setView(locat, 15);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
