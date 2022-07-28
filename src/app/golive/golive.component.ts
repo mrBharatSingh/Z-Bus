@@ -44,7 +44,7 @@ export class GoliveComponent implements OnInit {
       },
       {
         enableHighAccuracy: false,
-        timeout: 60000,
+        timeout: 600000,
         maximumAge: 0,
       }
     );

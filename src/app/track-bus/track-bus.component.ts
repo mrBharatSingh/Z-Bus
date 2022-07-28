@@ -49,9 +49,9 @@ export class TrackBusComponent implements OnInit {
           popupAnchor: locat, // point from which the popup should open relative to the iconAnchor
         });
 
-        if (marker) {
-          map.removeLayer(marker);
-        }
+        // if (marker) {
+        //   map.removeLayer(marker);
+        // }
         marker = L.marker(locat);
         map.addLayer(marker);
 
