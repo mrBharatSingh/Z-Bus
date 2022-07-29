@@ -43,7 +43,7 @@ export class GoliveComponent implements OnInit {
         console.log(err);
       },
       {
-        enableHighAccuracy: false,
+        enableHighAccuracy: true,
         timeout: 600000,
         maximumAge: 0,
       }
