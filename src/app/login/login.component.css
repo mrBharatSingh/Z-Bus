@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+::ng-deep mat-form-field{
+    width: 80%;
+}
+#loginButton{
+   font-size: 1.4rem;
+   width: 80%;
+   padding: 5px;
+}

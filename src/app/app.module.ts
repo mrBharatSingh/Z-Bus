@@ -13,6 +13,10 @@ import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationService } from './service/location.service';
 import { BrowserAnimationsModule } from'@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms'; 
 
 
 @NgModule({
@@ -20,7 +24,9 @@ import { BrowserAnimationsModule } from'@angular/platform-browser/animations';
     AppComponent,
     NavbarComponent,
     BodyComponent,
-    routingComponents, 
+    LoginComponent, 
+    routingComponents,
+    
  
   ],
   imports: [
@@ -34,9 +40,9 @@ import { BrowserAnimationsModule } from'@angular/platform-browser/animations';
     MatSelectModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
-   
-    
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [LocationService],
   bootstrap: [AppComponent]

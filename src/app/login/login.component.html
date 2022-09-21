@@ -1,0 +1,30 @@
+<form #userform = "ngForm" (ngSubmit)="checkUser(userform.value)">
+<mat-form-field appearance="fill">
+  <mat-label>Mobile Number</mat-label>
+  <input matInput ngModel name='phone' />
+  <mat-icon matSuffix>phone</mat-icon>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>Enter your password</mat-label>
+  <input matInput ngModel [type]="hide ? 'password' : 'text'" name='password' />
+  <button
+    mat-icon-button
+    matSuffix
+    (click)="hide = !hide"
+    [attr.aria-label]="'Hide password'"
+    [attr.aria-pressed]="hide"
+  >
+    <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+  </button>
+</mat-form-field>
+<button mat-raised-button color="primary" id="loginButton" type="submit">Login</button>
+</form>
+
+<!-- <form #userform = "ngForm" (ngSubmit)="checkUser(userform)">
+<input type="text" name="phone" id="" ngModle>
+<input type="text" name="pass" ngModle>
+<button color="primary" id="loginButton" type="submit">Login</button>
+</form> -->
+
+{{userResult}}

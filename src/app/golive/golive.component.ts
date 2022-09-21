@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../service/location.service';
+import{LoginComponent} from '../login/login.component'
 
 @Component({
   selector: 'app-golive',
@@ -8,6 +9,7 @@ import { LocationService } from '../service/location.service';
 })
 export class GoliveComponent implements OnInit {
   id: any;
+  isLogin=true
   constructor(private locationService:LocationService) {}
 
   ngOnInit(): void {}
