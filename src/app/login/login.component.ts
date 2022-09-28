@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../service/location.service';
+import { SubjectService } from '../service/subject.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { LocationService } from '../service/location.service';
 export class LoginComponent implements OnInit {
   hide = true;
   userResult:any;
-  constructor(private userService:LocationService) { }
+  constructor(private userService:LocationService,private userAuthentication:SubjectService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
       if(result.result=="password is match")
       {
         this.userResult=result.result
+        this.userAuthentication.userAuth.next(true)
       }
     })
     

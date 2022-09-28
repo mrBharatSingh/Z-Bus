@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class LocationService {
 
-  // private _url=`https://zbusmaster.herokuapp.com/`
-  private _url=`http://localhost:2233/`
+  private _url=`https://zbusmaster.herokuapp.com/`
+  // private _url=`http://localhost:2233/`
   constructor(private http:HttpClient) { }
 
   getlocation(){

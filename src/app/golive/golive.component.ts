@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../service/location.service';
 import{LoginComponent} from '../login/login.component'
+import { SubjectService } from '../service/subject.service';
 
 @Component({
   selector: 'app-golive',
@@ -9,10 +10,14 @@ import{LoginComponent} from '../login/login.component'
 })
 export class GoliveComponent implements OnInit {
   id: any;
-  isLogin=true
-  constructor(private locationService:LocationService) {}
+  isLogin:boolean=false;
+  constructor(private locationService:LocationService,private userAuthentication:SubjectService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userAuthentication.userAuth.subscribe((result)=>{
+      this.isLogin=result
+    })
+  }
   shareLocation() {
     if (!navigator.geolocation) {
       console.log('your device is no support gioLocation');

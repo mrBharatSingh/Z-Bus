@@ -1,6 +1,6 @@
 
-<app-login *ngIf="isLogin"></app-login>
-  <div *ngIf="!isLogin" class="goliveContainer" >
+<app-login *ngIf="!isLogin"></app-login>
+  <div *ngIf="isLogin" class="goliveContainer" >
     <div class="example-button-container example-button-container1" (click)="shareLocation()" >
         <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
           <mat-icon> location_on</mat-icon>
